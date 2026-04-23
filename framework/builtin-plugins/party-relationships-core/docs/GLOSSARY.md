@@ -9,6 +9,10 @@
 | party.parties.create | Create Party Record |
 | party.parties.merge | Merge Party Records |
 | party.roles.activate | Activate Party Role |
+| party.parties.hold | Place Record On Hold |
+| party.parties.release | Release Record Hold |
+| party.parties.amend | Amend Record |
+| party.parties.reverse | Reverse Record |
 | party.projections.refresh | Job definition queued on `party-projections`. |
 | party.reconciliation.run | Job definition queued on `party-reconciliation`. |
 | party-onboarding | Onboard, approve, activate, and archive canonical party records. |

@@ -71,6 +71,10 @@ Provides the canonical external-party, contact, address, and relationship write 
 | Action | `party.parties.create` | Permission: `party.parties.write` | Create Party Record<br>Idempotent<br>Audited |
 | Action | `party.parties.merge` | Permission: `party.parties.write` | Merge Party Records<br>Non-idempotent<br>Audited |
 | Action | `party.roles.activate` | Permission: `party.roles.write` | Activate Party Role<br>Non-idempotent<br>Audited |
+| Action | `party.parties.hold` | Permission: `party.parties.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `party.parties.release` | Permission: `party.parties.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `party.parties.amend` | Permission: `party.parties.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `party.parties.reverse` | Permission: `party.parties.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `party.parties` | Portal disabled | Canonical parties with multi-role lifecycle metadata and traceability fields.<br>Purpose: Provide one governed write model for customers, suppliers, prospects, and related external entities.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `party.contacts` | Portal disabled | Contact and address records attached to canonical parties.<br>Purpose: Keep communication endpoints and jurisdiction-sensitive address data aligned to party truth.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `party.relationships` | Portal disabled | Parent-child and commercial relationships between parties.<br>Purpose: Model hierarchies, account ownership, and cross-party commercial context without duplicating master records.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/party-relationships-core";
+import { manifest, createPartyRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/party-relationships-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  createPartyRecordAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/party-relationships-core";
+import { manifest, createPartyRecordAction } from "@plugins/party-relationships-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", createPartyRecordAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `party.parties.create`, `party.parties.merge`, `party.roles.activate`.
+- Exports 7 governed actions: `party.parties.create`, `party.parties.merge`, `party.roles.activate`, `party.parties.hold`, `party.parties.release`, `party.parties.amend`, `party.parties.reverse`.
 - Owns 3 resource contracts: `party.parties`, `party.contacts`, `party.relationships`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

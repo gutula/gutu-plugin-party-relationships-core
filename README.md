@@ -26,7 +26,7 @@ Canonical party, contact, address, relationship, and role-facet records for cust
 
 Provides the canonical external-party, contact, address, and relationship write model so every business plugin can compose around one governed business identity spine.
 
-- Exports 3 governed actions: `party.parties.create`, `party.parties.merge`, `party.roles.activate`.
+- Exports 7 governed actions: `party.parties.create`, `party.parties.merge`, `party.roles.activate`, `party.parties.hold`, `party.parties.release`, `party.parties.amend`, `party.parties.reverse`.
 - Owns 3 resource contracts: `party.parties`, `party.contacts`, `party.relationships`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `party.parties.create`, `party.parties.merge`, `party.roles.activate` |
+| Actions | 7 | `party.parties.create`, `party.parties.merge`, `party.roles.activate`, `party.parties.hold`, `party.parties.release`, `party.parties.amend`, `party.parties.reverse` |
 | Resources | 3 | `party.parties`, `party.contacts`, `party.relationships` |
 | Jobs | 2 | `party.projections.refresh`, `party.reconciliation.run` |
 | Workflows | 1 | `party-onboarding` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/party-relationships-core";
+import { manifest, createPartyRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/party-relationships-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(createPartyRecordAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

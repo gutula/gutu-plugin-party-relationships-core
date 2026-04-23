@@ -6,7 +6,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "party.parties.create",
       "party.parties.merge",
-      "party.roles.activate"
+      "party.roles.activate",
+      "party.parties.hold",
+      "party.parties.release",
+      "party.parties.amend",
+      "party.parties.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -25,7 +29,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "party.parties.create",
       "party.parties.merge",
-      "party.roles.activate"
+      "party.roles.activate",
+      "party.parties.hold",
+      "party.parties.release",
+      "party.parties.amend",
+      "party.parties.reverse"
     ],
     "downstreamTargets": {
       "create": [],
@@ -44,7 +52,11 @@ export const scenarioDefinitions = [
     "actionIds": [
       "party.parties.create",
       "party.parties.merge",
-      "party.roles.activate"
+      "party.roles.activate",
+      "party.parties.hold",
+      "party.parties.release",
+      "party.parties.amend",
+      "party.parties.reverse"
     ],
     "downstreamTargets": {
       "create": [],
