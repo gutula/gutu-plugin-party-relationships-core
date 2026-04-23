@@ -54,6 +54,11 @@ Provides the canonical external-party, contact, address, and relationship write 
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core` |
+| Recommended Plugins | `crm-core`, `support-service-core`, `business-portals-core` |
+| Capability Enhancing | `contracts-core`, `analytics-bi-core`, `ai-assist-core` |
+| Integration Only | `e-invoicing-core` |
+| Suggested Packs | `localization-global-base` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.party`, `events.publish.party` |
 | Provides Capabilities | `party.parties`, `party.contacts`, `party.relationships` |
 | Owns Data | `party.parties`, `party.contacts`, `party.relationships`, `party.role-facets` |

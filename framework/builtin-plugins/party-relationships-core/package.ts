@@ -48,9 +48,69 @@ export default definePackage({
       "packageId": "workflow-core",
       "class": "required",
       "rationale": "Required for Party & Relationships Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "crm-core",
+      "class": "optional",
+      "rationale": "Recommended with Party & Relationships Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "support-service-core",
+      "class": "optional",
+      "rationale": "Recommended with Party & Relationships Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "optional",
+      "rationale": "Recommended with Party & Relationships Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "contracts-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Party & Relationships Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Party & Relationships Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "ai-assist-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Party & Relationships Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "e-invoicing-core",
+      "class": "integration-only",
+      "rationale": "Only needed when Party & Relationships Core must exchange data or actions with adjacent or external surfaces."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "crm-core",
+    "support-service-core",
+    "business-portals-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "contracts-core",
+    "analytics-bi-core",
+    "ai-assist-core"
+  ],
+  "integrationOnlyPlugins": [
+    "e-invoicing-core"
+  ],
+  "suggestedPacks": [
+    "localization-global-base"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Standalone-safe as the canonical external identity foundation.",
+    "Best installed early so downstream commercial and service plugins share one party model."
+  ],
+  "optionalWith": [
+    "crm-core",
+    "support-service-core",
+    "business-portals-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "party.parties",

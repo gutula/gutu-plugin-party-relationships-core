@@ -1,6 +1,29 @@
 {
   "packageId": "party-relationships-core",
   "packName": "party-relationships-core-base-template",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core"
+  ],
+  "recommendedPlugins": [
+    "crm-core",
+    "support-service-core",
+    "business-portals-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "contracts-core",
+    "analytics-bi-core",
+    "ai-assist-core"
+  ],
+  "integrationOnlyPlugins": [
+    "e-invoicing-core"
+  ],
+  "suggestedPacks": [
+    "localization-global-base"
+  ],
   "expectedActions": [
     "party.parties.create",
     "party.parties.merge",

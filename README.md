@@ -61,11 +61,27 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `party-relationships-core` |
 | Repo | [gutu-plugin-party-relationships-core](https://github.com/gutula/gutu-plugin-party-relationships-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core` |
+| Recommended Plugins | `crm-core`, `support-service-core`, `business-portals-core` |
+| Capability Enhancing | `contracts-core`, `analytics-bi-core`, `ai-assist-core` |
+| Integration Only | `e-invoicing-core` |
+| Suggested Packs | `localization-global-base` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.party`, `events.publish.party` |
 | Provided Capabilities | `party.parties`, `party.contacts`, `party.relationships` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`
+- Recommended plugins: `crm-core`, `support-service-core`, `business-portals-core`
+- Capability-enhancing plugins: `contracts-core`, `analytics-bi-core`, `ai-assist-core`
+- Integration-only plugins: `e-invoicing-core`
+- Suggested packs: `localization-global-base`
+- Standalone supported: yes
+- Standalone-safe as the canonical external identity foundation.
+- Best installed early so downstream commercial and service plugins share one party model.
 
 ## Capability Matrix
 

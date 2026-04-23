@@ -7,6 +7,23 @@
     "audit-core",
     "workflow-core"
   ],
+  "recommendedPlugins": [
+    "crm-core",
+    "support-service-core",
+    "business-portals-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "contracts-core",
+    "analytics-bi-core",
+    "ai-assist-core"
+  ],
+  "integrationOnlyPlugins": [
+    "e-invoicing-core"
+  ],
+  "suggestedPacks": [
+    "localization-global-base"
+  ],
+  "standaloneSupported": true,
   "requiredCapabilities": [
     "ui.register.admin",
     "api.rest.mount",
