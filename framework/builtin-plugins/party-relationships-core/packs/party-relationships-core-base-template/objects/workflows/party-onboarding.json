@@ -1,0 +1,9 @@
+{
+  "workflowId": "party-onboarding",
+  "actors": [
+    "operations",
+    "compliance",
+    "commercial-owner"
+  ],
+  "description": "Onboard, approve, activate, and archive canonical party records."
+}

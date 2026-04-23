@@ -1,0 +1,10 @@
+{
+  "automationId": "party-relationships-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "party.reconciliation.run",
+  "queues": [
+    "party-dedupe-review",
+    "contact-validation-failures",
+    "role-activation-holds"
+  ]
+}

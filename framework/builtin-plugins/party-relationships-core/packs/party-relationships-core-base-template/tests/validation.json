@@ -1,0 +1,25 @@
+{
+  "packageId": "party-relationships-core",
+  "packName": "party-relationships-core-base-template",
+  "expectedActions": [
+    "party.parties.create",
+    "party.parties.merge",
+    "party.roles.activate"
+  ],
+  "expectedResources": [
+    "party.parties",
+    "party.contacts",
+    "party.relationships"
+  ],
+  "expectedReports": [
+    "Lead Details",
+    "Opportunity Summary",
+    "Prospect Pipeline",
+    "Customer Contact Audit"
+  ],
+  "expectedExceptionQueues": [
+    "party-dedupe-review",
+    "contact-validation-failures",
+    "role-activation-holds"
+  ]
+}

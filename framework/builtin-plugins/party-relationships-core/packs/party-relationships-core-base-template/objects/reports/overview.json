@@ -1,0 +1,19 @@
+{
+  "pluginId": "party-relationships-core",
+  "reports": [
+    "Lead Details",
+    "Opportunity Summary",
+    "Prospect Pipeline",
+    "Customer Contact Audit"
+  ],
+  "exceptionQueues": [
+    "party-dedupe-review",
+    "contact-validation-failures",
+    "role-activation-holds"
+  ],
+  "operationalScenarios": [
+    "party-onboarding",
+    "party-deduplication-merge",
+    "customer-supplier-cross-role-activation"
+  ]
+}
